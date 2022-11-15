@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokemon</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+ 
+</head>
+<body>
+    <script>
+        a = 10;
+        b = 20;
+        c = a - b;
+        console.log(c)
+    </script>
+    <h1 class="titulo">Batalla Mokemón</h1>
+    <section id="seleccionar-mascota">
+        <h2>Elige a tu Mokepón</h2>
+        <div id ="contenedor_tarjetas" class="tarjetas">
+        </div>
+        <button id="btn_mokepon" >Seleccionar</button>
+    </section>
+    <section class="ataques_seccion" id="seleccionar-ataque">
+        <h2 id="h2_ataques">Selecciona tu ataque</h2>
+        <div id="contenedor_ataques" class="botones-ataque">
+        </div> 
+        <div class="mensajes-resultados">
+            <p id="mensaje_resultado">BUENA SUERTE</p>
+            <p id="mensaje_resultado_ataque"></p>
+        </div>
+        <div id="seccion_reiniciar">
+            <button id="btn_reinciar">Reiniciar</button>
+        </div> 
+        <div class="vidas_cards_container">
+            <div>
+                <p class="corazones" id="vidasJugador">0</p>
+                <p>Tu <span id="nombreMokepon"></span></p>
+                <div class="ataques_container" id="ataquesJugador">
+                </div>
+            </div>
+            <div>
+                <p class="corazones" id="vidasEnemigo">0</p>
+                <p>Enemigo: <span id="mokeponEnemigo"></span></p>
+                <div class="ataques_container" id="ataquesEnemigo">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="ver-mapa">   
+        <h2>Recorre el mapa con tu Mokepon</h2>
+        <canvas id="mapa"></canvas>
+        <div>
+            <button ontouchend="detenerMovimiento()" ontouchstart="moverArriba()" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
+        </div>
+        <div>
+            <button ontouchend="detenerMovimiento()" ontouchstart="moverIzquierda()" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
+            <button ontouchend="detenerMovimiento()" ontouchstart="moverAbajo()" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
+            <button ontouchend="detenerMovimiento()" ontouchstart="moverDerecha()" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+        </div>
+    </section>
+
+<script src="./js/functions.js"></script>
+</body>
+</html>

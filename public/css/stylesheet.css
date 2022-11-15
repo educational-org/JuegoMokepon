@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Russo+One&display=swap');
+
+button{
+    padding: 1em 4em;
+    border:none;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+body{
+    margin:0;
+    background: url("../assets/fondo.jpg"), rgba(0,0,0,0.5);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    font-family:'Open Sans', sans-serif;
+    color: white;
+}
+
+.titulo{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size:60px;
+    font-family: 'Russo One', sans-serif;
+    margin: 0px 0px 0px 0px ;
+    -webkit-text-stroke: 1px #000;
+}
+h2{
+    margin:0px;
+}
+#seleccionar-mascota{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#seleccionar-mascota h2{
+    margin:5px;
+}
+.tarjetas{
+    display: flex;
+    gap:1em;
+    margin:1em 0em
+}
+
+.radio_inputs{
+    display: none;
+}
+.cards{
+    width: 250px;
+    height: 350px;
+    background:rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.8);
+    transition: all 0.2s ease;
+
+}
+.cards:hover{
+    background:rgba(255, 214, 30, 0.795);
+}
+.cards img{
+    width: 200px;
+    transition: all 0.2s ease;
+}
+.cards:hover img{
+    width: 300px;
+}
+.cards p {
+    font-family: 'Russo One', sans-serif;
+}
+.cards:hover p {
+    font-family: 'Russo One', sans-serif;
+    filter: drop-shadow(0px 0px 2px #000);
+    font-size: 34px;
+    position: absolute;
+    -webkit-text-stroke: 2px #000;
+}
+
+input:checked ~ .cards{
+    background-color: red;
+}
+input:checked ~ .cards:after{
+    width: 250px;
+    height: 350px;
+    background-color:rgba(0,0,0,0.8);
+    content: "SELECCIONADO";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 30px;
+    -webkit-text-stroke: 2px #000;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+.ataques_seccion{
+    display: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.botones-ataque{
+    display: flex;
+    gap:1em;
+}
+.botones-ataque button{
+    width: 100px;
+    height: 180px;
+    background:rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.8);
+    transition: all 0.2s ease;
+}
+.botones-ataque button:hover{
+    background:rgba(255, 214, 30, 0.795);
+}
+.botones-ataque button img{
+    width:150px;
+    padding: 1em;
+    transition: all 0.2s ease;
+}
+.botones-ataque button:hover img{
+    width:200px;
+
+}
+.botones-ataque button p {
+    font-family: 'Russo One', sans-serif;
+}
+.botones-ataque button:hover p {
+    font-family: 'Russo One', sans-serif;
+    filter: drop-shadow(0px 0px 2px #000);
+    font-size: 34px;
+    position: absolute;
+    -webkit-text-stroke: 2px #000;
+}
+.botones-ataque button:active{
+    background-color: red;
+}
+.botones-ataque button:active:after{
+    width: 150px;
+    height: 280px;
+    background-color:rgba(0,0,0,0.8);
+    content: "SELECCIONADO";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 16px;
+    -webkit-text-stroke: 0.5px #000;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+.botones-ataque button::visited{
+    display: none;
+}
+
+.mensajes-resultados #mensaje_resultado{
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    font-family: 'Russo One', sans-serif;
+    margin: 20px 0px 0px 0px;
+    -webkit-text-stroke: 3px #000;
+}
+.mensajes-resultados #mensaje_resultado_ataque{
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin: 0px 0px 0px 0px;
+
+}
+
+#btn_reinciar{
+    /* background-color: dodgerblue; */
+    color: white;
+    margin:16px;
+}
+
+
+.vidas_cards_container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    gap:1em;
+}
+.vidas_cards_container > div{
+    padding: 1em;
+    background-color: #000;
+    text-align: center;
+}
+.corazones{
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+}
+.ataques_container p{
+    padding-bottom:5px;
+    border-bottom:1px solid white;
+}
+
+#seccion_reiniciar{
+    display: none;
+}
+/* Para canvas  */
+#ver-mapa{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#ver-mapa button{
+    width: 100px;
+    margin: 0.5em;
+    padding:1em;
+    -youbkit-touch-callout: none; /*iOS Safari*/
+    -youbkit-user-select: none;   /* Chrome 6.0+, Safari 3.1+, Edge y Opera 15+ */
+    -moz-user-select: none;    /*Firefox*/
+    -ms-user-select: none;        /* IE 10+ y Edge */
+    user-select: none; 
+}
+@media (max-width: 800px){
+    .titulo{
+        font-size: 40px;
+    }
+    .tarjetas{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .tarjetas div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .tarjetas div .cards{
+        width: 300px;
+        height:200px;
+        flex-direction: row;
+
+    }
+    input:checked ~ .cards:after, .botones-ataque button:active:after{
+        width: 300px;
+        height:200px;
+    }
+    .botones-ataque{
+        flex-direction: column;
+        
+    }
+    .botones-ataque button{
+        width: 300px;
+        height:200px;
+        flex-direction: row;
+    }
+    .vidas_cards_container {
+        grid-template-columns: 300px;
+    }
+}
