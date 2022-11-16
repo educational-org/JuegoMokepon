@@ -191,11 +191,13 @@ input:checked ~ .cards:after{
 
 }
 
-#btn_reinciar{
+#btn_reinciar, #btn_continuar{
     /* background-color: dodgerblue; */
     color: white;
     margin:16px;
+    display: none;
 }
+
 
 
 .vidas_cards_container{

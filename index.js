@@ -43,8 +43,6 @@ app.post('/mokepon/:jugadorId',(req,res)=>{
     if(jugadorIndex >= 0){
         jugadores[jugadorIndex].asignarMokepon(mokepon);
     }
-    console.log(jugadores) 
-    console.log(jugadorId)
     res.end()
 })
 app.post('/mokepon/:jugadorId/posicion',(require,res)=>{
@@ -70,6 +68,7 @@ app.post('/mokepon/:jugadorId/ataques',(req,res)=>{
     }
     res.end()
 })
+
 app.get('/mokepon/:jugadorId/ataques',(req,res)=>{
     const jugadorId = req.params.jugadorId || ""
     const jugador = jugadores.find((jugador)=> jugador.id == jugadorId)
@@ -77,6 +76,18 @@ app.get('/mokepon/:jugadorId/ataques',(req,res)=>{
         ataques:jugador.ataques || []
     })
 })
+
+app.post('/mokepon/:jugadorId/eliminarEnemigo',(req,res)=>{
+    const jugadorId = req.params.jugadorId || ""
+    const jugadorIndex = jugadores.findIndex((jugador)=> jugadorId === jugador.id)
+    if(jugadorIndex>=0){
+        jugadores.splice(jugadorIndex,1);
+    }
+    res.send({
+        res:jugadores
+    })
+})
+
 
 app.listen(8080,()=>{
     console.log("----Server is running----")
