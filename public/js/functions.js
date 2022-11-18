@@ -414,26 +414,32 @@ function startMove(event,moke){
     }
 }
 function revisarColision(enemigo){
-    const arribaEnemigo = enemigo.y
-    const abajoEnemigo = enemigo.y + enemigo.alto
-    const derechaEnemigo = enemigo.x + enemigo.ancho
-    const izquierdaEnemigo = enemigo.x
-
-    const arribaMokepon = mokeponElegido.y
-    const abajoMokepon = mokeponElegido.y + mokeponElegido.alto
-    const derechaMokepon = mokeponElegido.x + mokeponElegido.ancho
-    const izquierdaMokepon = mokeponElegido.x
+    if(enemigo.x !== undefined){
+        const arribaEnemigo = enemigo.y
+        const abajoEnemigo = enemigo.y + enemigo.alto
+        const derechaEnemigo = enemigo.x + enemigo.ancho
+        const izquierdaEnemigo = enemigo.x
     
-    if(abajoMokepon < arribaEnemigo || arribaMokepon > abajoEnemigo || derechaMokepon < izquierdaEnemigo || izquierdaMokepon > derechaEnemigo){
-        return;
-    }else{
-        seccionSeleAtaque.style.display ='flex';
-        sectionVerMapa.style.display ='none';
-        clearInterval(intervalo)
-        seleccionOponente(enemigo);
-        detenerMovimiento(mokeponElegido)
-        enemigoId = enemigo.id
+        const arribaMokepon = mokeponElegido.y
+        const abajoMokepon = mokeponElegido.y + mokeponElegido.alto
+        const derechaMokepon = mokeponElegido.x + mokeponElegido.ancho
+        const izquierdaMokepon = mokeponElegido.x
+        
+        if(abajoMokepon < arribaEnemigo || arribaMokepon > abajoEnemigo || derechaMokepon < izquierdaEnemigo || izquierdaMokepon > derechaEnemigo){
+            return;
+        }else{
+            console.log(enemigo)
+            console.log(mokeponElegido)
+            console.log("hay colisión funcion revisarColision")
+            seccionSeleAtaque.style.display ='flex';
+            sectionVerMapa.style.display ='none';
+            clearInterval(intervalo)
+            seleccionOponente(enemigo);
+            detenerMovimiento(mokeponElegido)
+            enemigoId = enemigo.id
+        }
     }
+    
 }
 
 //SERVER FUNCTIONS
